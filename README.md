@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/badge/Version-1.21.30-blue?style=plastic&logo=luanti&logoColor=white" alt="Version">
   <img src="https://img.shields.io/badge/RenderDragon-orange?style=plastic&logo=unity" alt="Engine">
   <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=plastic" alt="Status">
+  <img src="https://img.shields.io/badge/Version-1.1-blue?style=plastic&logo=luanti&logoColor=white" alt="Version Specific On Repo Releases">
 </div>
 
 ## Shader
