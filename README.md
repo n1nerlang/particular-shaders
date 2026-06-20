@@ -29,3 +29,11 @@ This is a Shader for Minecraft Bedrock 1.21.30+ using the RenderDragon engine's 
 - **Custom Lighting**: Optimized sun and moon illuminance.
 - **Atmospheric Effects**: Custom sky and horizon colors with fog density.
 - **Color Grading**: Enhanced contrast and saturation for a vibrant look.
+- **PBR Support**: Physically Based Rendering for blocks (Metalness, Emissive, Roughness).
+- **Automated Pipeline**: GitHub Actions automatically process assets and bundle the resource pack.
+
+## Automated Asset Pipeline
+This project uses an automated pipeline to process textures and generate `.texture_set.json` files for PBR support.
+1. Add your base textures to `src_assets/textures/blocks/`.
+2. Add your MER (Metalness, Emissive, Roughness) maps with the `_mer.png` suffix (e.g., `stone_mer.png` for `stone.png`).
+3. The GitHub workflow will automatically generate the required `.texture_set.json` files and bundle the pack.

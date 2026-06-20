@@ -1,0 +1,31 @@
+name: Build and Process Assets
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Process Assets
+        run: |
+          python scripts/process_assets.py
+
+      - name: Create .mcpack
+        run: |
+          zip -r ParticularShaders.mcpack . -x "*.git*" ".github*" "logo*" "src_assets*" "scripts*" "README.md" "LICENSE" ".gitkeep"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ParticularShaders
+          path: ParticularShaders.mcpack
