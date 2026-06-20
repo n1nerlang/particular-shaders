@@ -3,11 +3,15 @@ name: Build and Process Assets
 on:
   push:
     branches: [ main ]
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -20,12 +24,33 @@ jobs:
         run: |
           python scripts/process_assets.py
 
+      - name: Get Version
+        id: get_version
+        run: |
+          VERSION=$(python3 -c "import json; print('.'.join(map(str, json.load(open('manifest.json'))['header']['version'])))")
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "TAG_NAME=v$VERSION" >> $GITHUB_OUTPUT
+
       - name: Create .mcpack
         run: |
           zip -r ParticularShaders.mcpack . -x "*.git*" ".github*" "logo*" "src_assets*" "scripts*" "README.md" "LICENSE" ".gitkeep"
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+      - name: Create Stable Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/v')
         with:
-          name: ParticularShaders
-          path: ParticularShaders.mcpack
+          tag_name: ${{ steps.get_version.outputs.TAG_NAME }}
+          name: Particular Shaders v${{ steps.get_version.outputs.VERSION }}
+          files: ParticularShaders.mcpack
+          draft: false
+          prerelease: false
+
+      - name: Create Pre-release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          tag_name: ${{ steps.get_version.outputs.TAG_NAME }}-pre
+          name: Particular Shaders v${{ steps.get_version.outputs.VERSION }} Pre-release
+          files: ParticularShaders.mcpack
+          draft: false
+          prerelease: true
