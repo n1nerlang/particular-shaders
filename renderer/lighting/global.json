@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.30",
+    "minecraft:lighting_settings": {
+        "description": {
+            "identifier": "particular:default_lighting"
+        },
+        "directional_lights": {
+            "orbital": {
+                "sun": {
+                    "illuminance": {
+                        "0.0": 100000.0,
+                        "0.5": 0.0,
+                        "1.0": 100000.0
+                    },
+                    "color": "#FFFFFF"
+                },
+                "moon": {
+                    "illuminance": {
+                        "0.0": 0.0,
+                        "0.5": 100.0,
+                        "1.0": 0.0
+                    },
+                    "color": "#C0C0FF"
+                }
+            }
+        }
+    }
+}

@@ -14,4 +14,18 @@
 </div>
 
 ## Shader
-This is a Shader for only Crafting and a building
+This is a Shader for Minecraft Bedrock 1.21.30+ using the RenderDragon engine's Deferred Technical Preview.
+
+## How to Use
+1. **Download and Install**: Download the `.mcpack` and open it with Minecraft.
+2. **Enable Experiments**: When creating or editing a world, go to the **Experiments** tab and enable **Render Dragon Features for Creators**.
+3. **Activate Resource Pack**: Go to **Resource Packs** and activate **Particular Shaders**.
+4. **Enable Deferred Technical Preview**:
+   - Enter the world.
+   - Open **Settings** > **Video**.
+   - Change **Graphics Mode** to **Deferred Technical Preview**.
+
+## Features
+- **Custom Lighting**: Optimized sun and moon illuminance.
+- **Atmospheric Effects**: Custom sky and horizon colors with fog density.
+- **Color Grading**: Enhanced contrast and saturation for a vibrant look.

@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Particular Shaders for Minecraft Bedrock 1.21.30+",
+        "name": "Particular Shaders",
+        "uuid": "0479f061-9213-410e-8408-490e19a0d133",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 21, 30]
+    },
+    "modules": [
+        {
+            "description": "Particular Shaders",
+            "type": "resources",
+            "uuid": "b3dffd2e-208c-4480-892d-a25e11285f90",
+            "version": [1, 0, 0]
+        }
+    ]
+}

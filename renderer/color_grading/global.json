@@ -1,0 +1,13 @@
+{
+    "format_version": "1.21.30",
+    "minecraft:color_grading_settings": {
+        "description": {
+            "identifier": "particular:default_color_grading"
+        },
+        "color_grading": {
+            "exposure": 1.0,
+            "contrast": 1.1,
+            "saturation": 1.2
+        }
+    }
+}
